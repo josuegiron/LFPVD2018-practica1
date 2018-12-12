@@ -234,7 +234,7 @@ public class inicio extends javax.swing.JFrame {
 
     private void SaveFile() {
         if (fileCode != null) {
-            SaveCodeInFile();
+            WriteCodeInFile();
         } else {
             SaveFileAs();
         }
@@ -258,12 +258,12 @@ public class inicio extends javax.swing.JFrame {
             //Seleccionamos el fichero
             fileCode = fc.getSelectedFile();
 
-            SaveCodeInFile();
+            WriteCodeInFile();
 
         }
     }
 
-    private void SaveCodeInFile() {
+    private void WriteCodeInFile() {
         try ( FileWriter fw = new FileWriter(fileCode)) {
 
             //Escribimos el texto en el fichero
