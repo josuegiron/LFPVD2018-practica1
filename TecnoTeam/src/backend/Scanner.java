@@ -23,9 +23,10 @@ public class Scanner {
     private Token token;
 
     public Scanner(String code) {
-        Code = code;
+        Code = code+" ";
         currentState = 0;
-        currentRow = currentColum = 1;
+        currentRow = 1;
+                currentColum = 0;
         TokenTable = new ArrayList<Token>();
         ErrorTable = new ArrayList<Error>();
         alph = new Alphabet();
@@ -43,17 +44,35 @@ public class Scanner {
                     token.Row = currentRow;
                     token.Colum = currentColum;
 
-                    if (alph.Validate(alph.M, currentChar)) {
+                    if (alph.ValidateAlphabet(alph.LM, currentChar)) {
                         token.Lexema += currentChar;
                         currentState = 1;
                     }else{
-                        System.out.println("No funciona");
+                        switch (currentChar)
+                            {
+                                case ' ':
+                                case '\t':
+                                case '\b':
+                                case '\f':
+                                case '\r':
+                                    currentState = 0;
+                                    break;
+                                case '\n':
+                                    currentRow++;
+                                    currentColum = 0;
+                                    currentState = 0;
+                                    break;
+                                default:
+                                    token.Lexema += currentChar;
+                                    currentState = -1;
+                                    currentColum--;
+                                    break;
+                            }
                     }
                     break; // So
 
                 case 1:
-                    System.out.println("hola");
-                    if (alph.Validate(alph.M, currentChar)) {
+                    if (alph.ValidateAlphabet(alph.LM, currentChar)) {
                         token.Lexema += currentChar;
                         currentState = 1;
                     } else {
@@ -83,9 +102,12 @@ public class Scanner {
                 default: // ERROR
                 // Statements
             }
+            
         }
         
-        System.out.println(TokenTable);
+        for(Token token : TokenTable){
+            System.out.println(token.Colum);
+    }
 
     }
 }
