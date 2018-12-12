@@ -5,6 +5,7 @@
  */
 package frontend;
 
+import backend.Scanner;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -105,6 +106,11 @@ public class inicio extends javax.swing.JFrame {
         jMenu2.setText("Codigo");
 
         jMenuItem5.setText("Analizar");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem5);
 
         jMenuBar1.add(jMenu2);
@@ -156,6 +162,11 @@ public class inicio extends javax.swing.JFrame {
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         SaveFileAs();        // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        Scanner scanner = new Scanner(code.getText());  
+        scanner.Scan();// TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments
