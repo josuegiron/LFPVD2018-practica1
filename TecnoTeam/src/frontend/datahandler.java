@@ -3,19 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tecnoteamprocess;
+package frontend;
+
+import javax.swing.JFileChooser;
+import javax.swing.JTextArea;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
  * @author josue
  */
-public class TecnoTeamProcess {
+public class datahandler {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
     
 }
