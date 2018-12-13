@@ -23,12 +23,6 @@ public class Scanner {
     private Token token;
 
     public Scanner() {
-        currentState = 0;
-        currentRow = 1;
-        currentColum = 0;
-        TokenTable = new ArrayList<Token>();
-        ErrorTable = new ArrayList<Error>();
-        alph = new Alphabet();
 
     }
     
@@ -46,6 +40,13 @@ public class Scanner {
     }
 
     public void Scan() {
+        currentState = 0;
+        currentRow = 1;
+        currentColum = 0;
+        TokenTable = new ArrayList<Token>();
+        ErrorTable = new ArrayList<Error>();
+        alph = new Alphabet();
+        
         for (index = 0; index < Code.length(); index++) {
             currentChar = Code.charAt(index);
             currentColum++;
@@ -83,8 +84,10 @@ public class Scanner {
                         currentState = 6;
                     } else {
                         switch (currentChar) {
-                            case ' ':
                             case '\t':
+                                currentState = 0;
+                                System.out.println("TAB");
+                            case ' ':
                             case '\b':
                             case '\f':
                             case '\r':

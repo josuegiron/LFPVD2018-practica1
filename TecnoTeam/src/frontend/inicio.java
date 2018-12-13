@@ -301,6 +301,10 @@ public class inicio extends javax.swing.JFrame {
                     valor = fr.read();
                 }
                 code.setText(cadena);
+                scanner.SetCode(cadena);
+                scanner.Scan();
+                formatCode();
+                
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
