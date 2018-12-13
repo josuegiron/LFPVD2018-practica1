@@ -10,6 +10,7 @@ package backend;
  * @author josuegiron
  */
 public class Token {
+
     public int ID, Token, Row, Colum;
 
     public int getID() {
@@ -44,32 +45,38 @@ public class Token {
         this.Colum = Colum;
     }
 
-    public String getLexema() {
-        return Lexema;
+    public String getLexeme() {
+        return Lexeme;
     }
 
-    public void setLexema(String Lexema) {
-        this.Lexema = Lexema;
+    public void setLexeme(String Lexeme) {
+        this.Lexeme = Lexeme;
     }
 
-    public String getType() {
+    public int getType() {
         return Type;
     }
 
-    public void setType(String Type) {
+    public void setType(int Type) {
         this.Type = Type;
     }
 
-    public Token(int ID, int Token, int Row, int Colum, String Lexema, String Type) {
+    public void addChar(char currentChar) {
+        this.Lexeme += currentChar;
+    }
+
+    public Token(int ID, int Token, int Row, int Colum, String Lexeme, int Type) {
         this.ID = ID;
         this.Token = Token;
         this.Row = Row;
         this.Colum = Colum;
-        this.Lexema = Lexema;
+        this.Lexeme = Lexeme;
         this.Type = Type;
     }
 
     public Token() {
+        this.Lexeme = "";
     }
-    public String Lexema, Type;
+    public String Lexeme;
+            public int Type;
 }
