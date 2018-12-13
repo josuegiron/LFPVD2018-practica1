@@ -43,7 +43,6 @@ public class Scanner {
     }
 
     public void Scan() {
-
         for (index = 0; index < Code.length(); index++) {
             currentChar = Code.charAt(index);
             System.out.println(currentChar);
@@ -117,7 +116,6 @@ public class Scanner {
                 case 3: // S3
                     token.addChar(currentChar);
                     currentState = 5;
-
                     break;
                 case 4: // S4 *
                     if (alph.ValidateAlphabet(alph.N, currentChar)) {
@@ -142,7 +140,7 @@ public class Scanner {
                 case 6: // S6 *
                     currentState = 0;
                     index--;
-                    //currentColum--;
+                    currentColum--;
                     TokenTable.add(token);
                     break;
                 default: // ERROR
