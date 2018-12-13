@@ -22,8 +22,7 @@ public class Scanner {
     public Alphabet alph;
     private Token token;
 
-    public Scanner(String code) {
-        Code = code + " ";
+    public Scanner() {
         currentState = 0;
         currentRow = 1;
         currentColum = 0;
@@ -32,12 +31,16 @@ public class Scanner {
         alph = new Alphabet();
 
     }
+    
+    public void SetCode(String code){
+        Code = code + " ";
+    }
 
     private void ValidateToken(Token token) {
         if (alph.ValidateLexeme(token.Lexeme)) {
             TokenTable.add(token);
         } else {
-            Error error = new Error(0, token.Row, token.Colum, token.Lexeme, "La palabra no pertenece al lenguaje");
+            Error error = new Error(0, token.Row, token.Colum, token.Lexeme, "La palabra no pertenece al lenguaje", token.Offset);
             ErrorTable.add(error);
         }
     }
@@ -45,14 +48,15 @@ public class Scanner {
     public void Scan() {
         for (index = 0; index < Code.length(); index++) {
             currentChar = Code.charAt(index);
-            System.out.println(currentChar);
             currentColum++;
             switch (currentState) {
                 case 0: // So
                     token = new Token();
                     token.Row = currentRow;
                     token.Colum = currentColum;
-
+                    
+                    token.Offset = index;
+                    
                     if (alph.ValidateAlphabet(alph.LM, currentChar)) {
                         token.addChar(currentChar);
                         token.setType(1); //    RESERVADA
@@ -147,7 +151,7 @@ public class Scanner {
                     if (alph.ValidateSpecialChar(currentChar)) {
                         currentState = 0;
                         index--;
-                        Error error = new Error(0, token.Row, token.Colum, token.Lexeme, "El componente lexico no pertenece al alfabeto del lenguaje");
+                        Error error = new Error(0, token.Row, token.Colum, token.Lexeme, "El componente lexico no pertenece al alfabeto del lenguaje", token.Offset);
                         ErrorTable.add(error);
                     } else {
                         token.addChar(currentChar);

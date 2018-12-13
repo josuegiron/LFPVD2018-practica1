@@ -10,7 +10,11 @@ package backend;
  * @author josuegiron
  */
 public class Error {
-    int ID, Row, Colum;
+    public int ID, Row, Colum, Offset;
+    
+    public int Length(){
+        return Error.length();
+    }
 
     public int getID() {
         return ID;
@@ -52,13 +56,15 @@ public class Error {
         this.Description = Description;
     }
 
-    public Error(int ID, int Row, int Colum, String Error, String Description) {
+    public Error(int ID, int Row, int Colum, String Error, String Description, int Offset) {
         this.ID = ID;
         this.Row = Row;
         this.Colum = Colum;
         this.Error = Error;
         this.Description = Description;
+        this.Offset = Offset;
     }
+    
 
     public Error() {
     }

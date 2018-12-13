@@ -11,10 +11,14 @@ package backend;
  */
 public class Token {
 
-    public int ID, Token, Row, Colum;
+    public int ID, Token, Row, Colum, Offset;
 
     public int getID() {
         return ID;
+    }
+    
+    public int Length(){
+        return Lexeme.length();
     }
 
     public void setID(int ID) {

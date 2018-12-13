@@ -85,6 +85,14 @@ public class Alphabet {
         Token.put(1, reservada);
         String[] numero = {"Numero", "Numeros seguidos de numeros"};
         Token.put(2, numero);
+        String[] cadena = {"Cadena", "Comillas seguida de numeros y letras y finaliza en comillas"};
+        Token.put(3, cadena);
+        String[] coma = {"Coma", "Simbolo coma"};
+        Token.put(4, coma);
+        String[] etiqueta = {"Menor y mayor que", "Simbolo menor y mayor que"};
+        Token.put(5, coma);
+        String[] diagonal = {"Diagonal", "Simbolo diagonal"};
+        Token.put(6, coma);
     }
     
 }
