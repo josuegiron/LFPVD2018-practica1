@@ -7,25 +7,11 @@ package backend;
 
 /**
  *
- * @author josue
+ * @author josuegiron
  */
-
-
-
 public class Token {
+
     public int ID, Token, Row, Colum;
-    public String Lexema, Type;
-    public Token(){
-        
-    }
-    public Token(int ID, int Token, int Row, int Colum, String Lexema, String Type) {
-        this.ID = ID;
-        this.Token = Token;
-        this.Row = Row;
-        this.Colum = Colum;
-        this.Lexema = Lexema;
-        this.Type = Type;
-    }
 
     public int getID() {
         return ID;
@@ -59,21 +45,38 @@ public class Token {
         this.Colum = Colum;
     }
 
-    public String getLexema() {
-        return Lexema;
+    public String getLexeme() {
+        return Lexeme;
     }
 
-    public void setLexema(String Lexema) {
-        this.Lexema = Lexema;
+    public void setLexeme(String Lexeme) {
+        this.Lexeme = Lexeme;
     }
 
-    public String getType() {
+    public int getType() {
         return Type;
     }
 
-    public void setType(String Type) {
+    public void setType(int Type) {
         this.Type = Type;
     }
-    
-    
+
+    public void addChar(char currentChar) {
+        this.Lexeme += currentChar;
+    }
+
+    public Token(int ID, int Token, int Row, int Colum, String Lexeme, int Type) {
+        this.ID = ID;
+        this.Token = Token;
+        this.Row = Row;
+        this.Colum = Colum;
+        this.Lexeme = Lexeme;
+        this.Type = Type;
+    }
+
+    public Token() {
+        this.Lexeme = "";
+    }
+    public String Lexeme;
+            public int Type;
 }

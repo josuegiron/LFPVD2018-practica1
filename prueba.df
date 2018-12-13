@@ -1,0 +1,39 @@
+
+<DIAGRAMA>
+<NOMBRE> "Ejemplo" </NOMBRE>
+<COMPONENTE>
+<CODIGO>1</ CODIGO >
+<TIPO> "Inicio" </TIPO> <TEXTO>"Inicio"</ TEXTO > <RELACION>2</ RELACION >
+</COMPONENTE >
+<COMPONENTE>
+< CODIGO >2</ CODIGO >
+<TIPO> "Actividad" </TIPO>
+<TEXTO>" Realizar Algoritmo de un problema dado"</ TEXTO >
+<RELACION>3</ RELACION > </COMPONENTE >
+<COMPONENTE>
+< CODIGO >3</ CODIGO >
+<TIPO> "Actividad" </TIPO>
+<TEXTO>" Realizar Pruebas"</ TEXTO > <RELACION>4</ RELACION >
+</COMPONENTE >
+<COMPONENTE>
+< CODIGO >4</ CODIGO >
+<TIPO> "Decision" </TIPO>
+<TEXTO>" ¿La prueba fue exitosa?"</ TEXTO > <RELACION>5,6</ RELACION >
+</COMPONENTE >
+<COMPONENTE>
+< CODIGO >5</ CODIGO >
+<TIPO> "Conector" </TIPO> <TEXTO>" Si"</ TEXTO > <RELACION>7</ RELACION >
+</COMPONENTE >
+<COMPONENTE>
+< CODIGO >6</ CODIGO >
+<TIPO> " Conector" </TIPO> <TEXTO>" No"</ TEXTO > <RELACION>2</ RELACION >
+</COMPONENTE >
+<COMPONENTE>
+< CODIGO >7</ CODIGO >
+<TIPO> " Actividad" </TIPO> <TEXTO>"Codificacion"</ TEXTO > <RELACION>8</ RELACION >
+</COMPONENTE >
+<COMPONENTE>
+< CODIGO >8</ CODIGO >
+<TIPO> "Fin" </TIPO>
+<TEXTO>"Fin"</ TEXTO > </COMPONENTE >
+</ DIAGRAMA >

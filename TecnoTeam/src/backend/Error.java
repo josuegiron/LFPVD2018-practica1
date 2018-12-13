@@ -7,30 +7,49 @@ package backend;
 
 /**
  *
- * @author josue
+ * @author josuegiron
  */
 public class Error {
-    public int ID, Row, Colum;
-    public String Error, Description;
+    int ID, Row, Colum;
 
     public int getID() {
         return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 
     public int getRow() {
         return Row;
     }
 
+    public void setRow(int Row) {
+        this.Row = Row;
+    }
+
     public int getColum() {
         return Colum;
+    }
+
+    public void setColum(int Colum) {
+        this.Colum = Colum;
     }
 
     public String getError() {
         return Error;
     }
 
+    public void setError(String Error) {
+        this.Error = Error;
+    }
+
     public String getDescription() {
         return Description;
+    }
+
+    public void setDescription(String Description) {
+        this.Description = Description;
     }
 
     public Error(int ID, int Row, int Colum, String Error, String Description) {
@@ -40,4 +59,8 @@ public class Error {
         this.Error = Error;
         this.Description = Description;
     }
+
+    public Error() {
+    }
+    String Error, Description;
 }
