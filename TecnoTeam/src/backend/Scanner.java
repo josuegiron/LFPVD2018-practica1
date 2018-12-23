@@ -92,6 +92,8 @@ public class Scanner {
                             case '\f':
                             case '\r':
                                 currentState = 0;
+                                currentRow++;
+                                currentColum = 0;
                                 break;
                             case '\n':
                                 currentRow++;

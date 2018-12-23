@@ -300,6 +300,7 @@ public class inicio extends javax.swing.JFrame {
                     cadena = cadena + (char) valor;
                     valor = fr.read();
                 }
+                cadena = cadena.replaceAll("\n\n", " ");
                 code.setText(cadena);
                 scanner.SetCode(cadena);
                 scanner.Scan();
